@@ -9,7 +9,7 @@ function CommentsContainer({ commentInfo }) {
   return (
     <div className=" m-2 py-2 flex gap-4 ">
       <div>
-        <img src={authorProfileImageUrl} className="rounded-full " />
+        <img src={authorProfileImageUrl} className="rounded-full " alt='img'/>
       </div>
       <div>
         <div className="flex gap-2 items-center">
