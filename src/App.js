@@ -28,7 +28,6 @@ function App() {
     <>
       <Provider store={store}>
         <Header />
-        {/* <Body /> */}
         <RouterProvider router={appRouter} />
       </Provider>
     </>
@@ -36,17 +35,3 @@ function App() {
 }
 
 export default App;
-
-/* 
-Head
-Body
- SideBar
- Main
-  ButtonList
-  CardContainer
-    Card
-   
-
-
-
-*/
