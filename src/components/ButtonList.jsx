@@ -31,7 +31,7 @@ export default function ButtonList() {
   };
 
   return (
-    <div className=" h-[60px] fixed z-0 w-full">
+    <div className="hidden sm:block h-[60px] sm:fixed z-0 w-full">
       <div className="  translate-y-[-6px] bg-white w-11/12  flex items-center pt-2 px-4">
         <div className="leftArrow rounded-full bg-black/10 p-1 m-1">
           {currentIndex !== 0 && (

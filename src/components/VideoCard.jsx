@@ -8,7 +8,7 @@ export default function VideoCard({ videoInfo }) {
   const { viewCount } = videoInfo?.statistics;
 
   return (
-    <div className="card mx-3 my-6 w-[340px] cursor-pointer leading-10 font-semibold">
+    <div className="card mx-[2px] sm:mx-4 my-6 w-[370px] sm:w-[250px] lg:w-[320px] cursor-pointer sm:leading-10 font-semibold">
       <img
         src={thumbnails.medium.url}
         alt="thumbnails"

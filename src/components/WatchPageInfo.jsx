@@ -22,12 +22,11 @@ const WatchPageInfo = ({ info }) => {
         GOOGLE_API_KEY
     );
     const json = await data.json();
-    // console.log(json.items);
     setCommentInfo(json.items);
   };
 
   return (
-    <div>
+    <div className="hidden lg:block">
       {commentInfo.map(
         (item) =>
           item.snippet.videoId === searchParams.get("v") && (

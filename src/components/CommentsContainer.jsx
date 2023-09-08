@@ -2,14 +2,13 @@ import React from "react";
 import ReactTimeAgo from "react-time-ago";
 
 function CommentsContainer({ commentInfo }) {
-  //   console.log(commentInfo);
   const { authorDisplayName, authorProfileImageUrl, publishedAt, textDisplay } =
     commentInfo?.snippet?.topLevelComment?.snippet;
 
   return (
-    <div className=" m-2 py-2 flex gap-4 ">
+    <div className="m-2 py-2 flex gap-4">
       <div>
-        <img src={authorProfileImageUrl} className="rounded-full " alt='img'/>
+        <img src={authorProfileImageUrl} className="rounded-full " alt="img" />
       </div>
       <div>
         <div className="flex gap-2 items-center">
