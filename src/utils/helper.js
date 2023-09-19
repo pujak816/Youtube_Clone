@@ -8,19 +8,19 @@ import SlideshowOutlinedIcon from "@mui/icons-material/SlideshowOutlined";
 const GOOGLE_API_KEY = process.env.REACT_APP_API_KEY;
 
 export const YOUTUBE_API =
-  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=" +
+  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&&maxResults=50&regionCode=IN&key=" +
   GOOGLE_API_KEY;
 
-const searchUrl =
-  "https://corsproxy.io/?" +
-  encodeURIComponent(
-    "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q="
-  );
-export const YOUTUBE_SEARCH_API = searchUrl;
+export const YOUTUBE_SEARCH_SUGGEST_API =
+  "https://corsproxy.io/?http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+
+export const SEARCH_API =
+  "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&type=video&q=";
+
+export const SEARCH_API_KEY = "&key=" + GOOGLE_API_KEY;
 
 export const YOUTUBE_COMMENTS_API =
-  "https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&allThreadsRelatedToChannelId=UCfLuT3JwLx8rvHjHfTymekw&key=" +
-  GOOGLE_API_KEY;
+  "https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&order=relevance&maxResults=7";
 
 export const OFFSET_LIVE_CHAT = 10;
 

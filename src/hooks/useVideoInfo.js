@@ -10,7 +10,6 @@ function useVideoInfo() {
   const getVideos = async () => {
     const data = await fetch(YOUTUBE_API);
     const json = await data.json();
-    // console.log(json.items);
     setVideos(json.items);
   };
 

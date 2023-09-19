@@ -3,7 +3,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SearchIcon from "@mui/icons-material/Search";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
-import { YOUTUBE_SEARCH_API } from "../utils/helper";
+import { YOUTUBE_SEARCH_SUGGEST_API } from "../utils/helper";
 import { cacheResults } from "../utils/searchSlice";
 
 export default function Header() {
@@ -29,8 +29,8 @@ export default function Header() {
   }, [searchQuery]);
 
   const getSearchSuggetion = async () => {
-    console.log(searchQuery);
-    const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
+    // console.log(searchQuery);
+    const data = await fetch(YOUTUBE_SEARCH_SUGGEST_API + searchQuery);
     const json = await data.json();
     setSuggestions(json[1]);
 

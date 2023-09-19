@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Button from "./Button";
 
 export default function ButtonList() {
-  const list = [
+  const buttons = [
     "All",
+    "Front-End",
+    "React Js",
     "Computer programming",
     "Live",
     "Yoga",
@@ -31,8 +34,8 @@ export default function ButtonList() {
   };
 
   return (
-    <div className="hidden sm:block h-[60px] sm:fixed z-0 w-full">
-      <div className="  translate-y-[-6px] bg-white w-11/12  flex items-center pt-2 px-4">
+    <section className="Button_section  h-[60px] sm:fixed z-0 w-full">
+      <div className="  bg-white w-11/12  flex items-center pt-2 px-4">
         <div className="leftArrow rounded-full bg-black/10 p-1 m-1">
           {currentIndex !== 0 && (
             <button onClick={prevBtn}>
@@ -40,29 +43,27 @@ export default function ButtonList() {
             </button>
           )}
         </div>
-        <div className="scrollContainer  overflow-auto scrollbar-hide md:scrollbar-default   whitespace-nowrap ">
+        <div className="button_container scrollContainer overflow-x-auto relative ">
           <div
             className=" transition-all duration-1000 ease-in-out   "
             style={{ transform: `translateX(-${currentIndex * 14}rem)` }}
           >
-            {list.map((item, index) => (
-              <button
-                key={index}
-                className="p-2 px-4 m-1  whitespace-nowrap rounded-3xl bg-gray-100 text-xs "
-              >
-                {item}
-              </button>
-            ))}
+            <div className="flex gap-3 py-3 px-1 ">
+              {buttons.map((item, index) => (
+                <Button key={index} name={item} />
+              ))}
+            </div>
           </div>
         </div>
+
         <div className="rightArrow rounded-full bg-black/10 p-1 m-1">
-          {currentIndex + 1 !== list.length && (
+          {currentIndex + 1 !== buttons.length && (
             <button onClick={nextBtn}>
               <ArrowForwardIcon />
             </button>
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
