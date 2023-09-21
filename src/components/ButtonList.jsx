@@ -6,12 +6,19 @@ import Button from "./Button";
 export default function ButtonList() {
   const buttons = [
     "All",
+    "Recently Uploaded",
     "Front-End",
     "React Js",
     "Computer programming",
     "Live",
     "Yoga",
     "Bollywood",
+    "Hollywood",
+    "Movies",
+    "India",
+    "Indian Cuisine",
+    "Podcasts",
+    "Hairstyles",
     "Gaming",
     "Songs",
     "News",
@@ -34,8 +41,8 @@ export default function ButtonList() {
   };
 
   return (
-    <section className="Button_section  h-[60px] sm:fixed z-0 w-full">
-      <div className="  bg-white w-11/12  flex items-center pt-2 px-4">
+    <section className="Button_section mt-10 sm:mt-0 fixed z-0 w-full ">
+      <div className="  bg-white lg:w-11/12  flex items-center pt-2 px-4">
         <div className="leftArrow rounded-full bg-black/10 p-1 m-1">
           {currentIndex !== 0 && (
             <button onClick={prevBtn}>

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import SearchIcon from "@mui/icons-material/Search";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { YOUTUBE_SEARCH_SUGGEST_API } from "../utils/helper";
 import { cacheResults } from "../utils/searchSlice";
+import SuggestionBox from "./SuggestionBox";
+import SearchIcon from "@mui/icons-material/Search";
 
 export default function Header() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -48,7 +49,7 @@ export default function Header() {
   };
 
   return (
-    <div className="flex justify-between items-center  sm:px-10 w-full sm:fixed z-40 bg-white ">
+    <div className="flex justify-between items-center  sm:px-10 w-full fixed z-40 bg-white ">
       <div className="flex gap-4 justify-center items-center">
         <div className="logo max-w-[23px] cursor-pointer hidden sm:block">
           <img
@@ -79,21 +80,7 @@ export default function Header() {
             <SearchIcon />
           </button>
         </div>
-        {showSuggestions && (
-          <div className="bg-white fixed translate-y-1 w-[34rem]   rounded-xl shadow-2xl ">
-            <ul>
-              {suggestions.map((item) => (
-                <li
-                  key={item}
-                  className=" py-1 px-3 my-1 hover:bg-gray-300 cursor-pointer"
-                >
-                  <SearchIcon sx={{ color: "gray" }} />
-                  <span className="pl-1 font-semibold">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        {showSuggestions && <SuggestionBox suggestions={suggestions} />}
       </div>
       <div className="account_icon items-center flex">
         <AccountCircleIcon sx={{ fontSize: "35px", color: "gray" }} />
