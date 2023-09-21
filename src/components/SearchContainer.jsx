@@ -7,7 +7,6 @@ import { SEARCH_API, SEARCH_API_KEY } from "../utils/helper";
 const SearchContainer = ({ params }) => {
   const [videos, setvideos] = useState([]);
   const [error, setError] = useState(false);
-  console.log(params);
 
   useEffect(() => {
     getSearchResults();
@@ -38,7 +37,9 @@ const SearchContainer = ({ params }) => {
           )}
         </div>
       ) : (
-        <p className="my-4">Error getting videos API Limit exceeded</p>
+        <p className="my-4 text-sm sm:text-base">
+          Error getting videos API Limit exceeded
+        </p>
       )}
     </div>
   );
